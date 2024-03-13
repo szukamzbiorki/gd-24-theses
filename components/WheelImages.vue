@@ -1,0 +1,107 @@
+<template>
+	<div ref="container" class="wheel keen-slider">
+		<div
+			v-for="(slide, index) in data"
+			:key="index"
+			class="keen-slider__slide"
+			:style="slide.style"
+		>
+			<span>{{ slide.name }}</span>
+		</div>
+	</div>
+</template>
+
+<script setup>
+	import KeenSlider from 'keen-slider'
+	import 'keen-slider/keen-slider.min.css'
+
+	const props = defineProps({
+		data: { type: Array },
+	})
+
+	const { height } = useWindowSize()
+	const { mobile } = useScreenSize()
+
+	const globalSlide = useGlobalSlide()
+
+	watch(globalSlide, (v) => changeSlide(v))
+
+	function changeSlide(glob) {
+		slider.value.moveToIdx(findNameIndex(glob))
+	}
+
+	function findNameIndex(glob) {
+		const name = props.data[glob].name
+		return props.data.findIndex((obj) => obj.name === name)
+	}
+
+	const emit = defineEmits(['slideChanged'])
+
+	const container = ref()
+	const slider = ref()
+
+	defineExpose({ changeSlide })
+
+	const options = {
+		loop: false,
+		mode: 'free-snap',
+		slides: {
+			origin: 'center',
+			perView: 'auto',
+		},
+		vertical: mobile.value ? false : true,
+		size: 1000,
+		created: (s) => {
+			s.slides[s.track.details.rel].classList.add('active-slide')
+		},
+		animationStarted(s) {
+			s.slides.forEach((slide) => {
+				slide.classList.remove('active-slide')
+			})
+		},
+		animationEnded: (s) => {
+			s.slides[s.track.details.rel].classList.add('active-slide')
+			globalSlide.value = s.track.details.rel
+		},
+	}
+
+	onMounted(() => {
+		slider.value = new KeenSlider(container.value, options)
+	})
+</script>
+
+<style scoped>
+	.wheel {
+		overflow: visible !important;
+		height: 100vh !important;
+		max-height: 100vh !important;
+		width: 30vw !important;
+
+		@media screen and (max-width: 640px) {
+			min-height: 79vh !important;
+			height: 79vh !important;
+			max-height: 79vh !important;
+			width: 90vw !important;
+			overflow: hidden !important;
+		}
+	}
+
+	.keen-slider__slide {
+		min-height: 75vh !important;
+		max-height: 90vh !important;
+		height: 75vh;
+		min-width: 75vw !important;
+		width: 80vw;
+		color: grey;
+		background-color: pink;
+		height: 90vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.active-slide {
+		color: black;
+		background-color: lightgreen;
+	}
+</style>

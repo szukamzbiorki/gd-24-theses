@@ -1,0 +1,33 @@
+:root {
+	--color: yellow;
+	--color1: #262626;
+	--color2: #c3e88d;
+	--color3: #ae81ff;
+	--color4: #b2ccd6;
+	--space-s: 4px;
+	--space-m: 10px;
+	--space-l: 6vw;
+	--space-xl: 14vw;
+	--select: #accef7;
+	--red: #ed1d24;
+	--blue: #21409a;
+	--green: #009444;
+	--grey: #a7a9ac;
+}
+
+@media screen and (max-width: 600px) {
+	:root {
+		--space-s: 4px;
+		--space-m: 10px;
+		--space-l: 10vw;
+		--space-xl: 20vw;
+	}
+}
+
+html {
+	font-size: 14px;
+}
+
+body {
+	font-family: sans-serif;
+}
