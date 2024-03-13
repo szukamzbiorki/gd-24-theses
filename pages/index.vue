@@ -22,6 +22,7 @@
 			<div class="center">Graduation theses—Graphic Design Department</div>
 			<div class="right">2024</div>
 		</div>
+		<div class="line"></div>
 	</div>
 </template>
 
@@ -120,6 +121,17 @@
 			& > .right {
 				/* width: 50vw !important; */
 			}
+		}
+
+		& > .line {
+			position: absolute;
+			top: calc(50vh - 0.75rem);
+			left: var(--space-s);
+			width: calc(100vw - 2 * var(--space-s));
+			height: 1.4rem;
+			/* border-bottom: 1px dashed white; */
+			/* border-top: 1px dashed white; */
+			border: 1px dashed white;
 		}
 	}
 </style>

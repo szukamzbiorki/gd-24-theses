@@ -127,6 +127,9 @@
 		},
 		vertical: true,
 		size: 20,
+		defaultAnimation: {
+			duration: 500,
+		},
 		created: (s) => {
 			s.slides[s.track.details.rel].classList.add('active-slide')
 		},

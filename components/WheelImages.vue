@@ -104,6 +104,9 @@
 			origin: 'center',
 			perView: 'auto',
 		},
+		defaultAnimation: {
+			duration: 500,
+		},
 		vertical: mobile.value ? false : true,
 		size: 1000,
 		created: (s) => {

@@ -48,6 +48,9 @@
 			origin: 'center',
 			perView: 'auto',
 		},
+		defaultAnimation: {
+			duration: 500,
+		},
 		vertical: true,
 		size: 20,
 		created: (s) => {

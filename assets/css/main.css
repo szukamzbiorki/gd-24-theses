@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'Monument';
+	src: url('ABCMonumentGrotesk-Medium-Trial.woff');
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -32,6 +37,7 @@ body {
 	font-family: sans-serif;
 	background-color: black;
 	color: white;
+	font-family: 'Monument';
 }
 
 .wrapper {
