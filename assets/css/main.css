@@ -34,10 +34,9 @@ html {
 body {
 	padding: 0;
 	margin: 0;
-	font-family: sans-serif;
 	background-color: black;
 	color: white;
-	font-family: 'Monument';
+	font-family: 'Monument', sans-serif;
 }
 
 .wrapper {
@@ -45,4 +44,8 @@ body {
 	min-height: 100vh;
 	box-sizing: border-box;
 	padding-top: calc(var(--header) + 4 * var(--space-m));
+}
+
+.wheel {
+	cursor: grab;
 }
