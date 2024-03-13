@@ -86,9 +86,9 @@
 		justify-content: flex-start;
 		height: 100vh;
 		width: 100vw;
-		padding: var(--space-m);
+		padding: 0 var(--space-m);
 		overflow: hidden;
-
+		gap: var(--space-m);
 		@media screen and (max-width: 640px) {
 			flex-direction: column;
 		}
@@ -104,7 +104,6 @@
 			align-items: center;
 			pointer-events: none;
 			padding: var(--space-m);
-			padding-top: calc(2 * var(--space-m) + 5px);
 			background-color: rgba(250, 250, 250, 0.9);
 			transition: opacity 1s ease-in-out;
 

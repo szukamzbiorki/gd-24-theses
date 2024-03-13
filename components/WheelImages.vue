@@ -99,7 +99,7 @@
 
 	const options = {
 		loop: false,
-		mode: 'free-snap',
+		mode: 'snap',
 		slides: {
 			origin: 'center',
 			perView: 'auto',
@@ -130,7 +130,7 @@
 		overflow: visible !important;
 		height: 100vh !important;
 		max-height: 100vh !important;
-		width: 30vw !important;
+		flex-grow: 1;
 
 		@media screen and (max-width: 640px) {
 			min-height: 79vh !important;
@@ -150,10 +150,10 @@
 			min-width: 75vw !important;
 			width: 80vw;
 		}
+		width: 90%;
 
 		color: grey;
 		background-color: pink;
-		height: 90vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
