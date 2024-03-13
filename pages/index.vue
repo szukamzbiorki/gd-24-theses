@@ -132,6 +132,7 @@
 		}
 
 		& > .line {
+			pointer-events: none;
 			& > * {
 				position: absolute;
 				top: calc(50vh - 0.75rem);

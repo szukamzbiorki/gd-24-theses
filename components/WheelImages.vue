@@ -103,6 +103,7 @@
 		slides: {
 			origin: 'center',
 			perView: 'auto',
+			spacing: 10,
 		},
 		defaultAnimation: {
 			duration: 500,
@@ -156,14 +157,17 @@
 		width: 90%;
 
 		color: grey;
-		background-color: pink;
+		background-color: grey;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition: all 0.3s ease;
+		opacity: 0.4;
 	}
 
 	.active-slide {
-		color: white;
-		background-color: lightgreen;
+		opacity: 1;
+		color: black;
+		background-color: white;
 	}
 </style>
