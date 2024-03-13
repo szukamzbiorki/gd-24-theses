@@ -93,7 +93,7 @@
 	})
 </script>
 
-<style>
+<style lang="postcss">
 	.wheel {
 		overflow: visible !important;
 		height: 100vh !important;

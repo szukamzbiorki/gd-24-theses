@@ -70,7 +70,7 @@
 	})
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 	.wheel {
 		overflow: visible !important;
 		height: 100vh !important;
@@ -90,8 +90,12 @@
 		min-height: 75vh !important;
 		max-height: 90vh !important;
 		height: 75vh;
-		min-width: 75vw !important;
-		width: 80vw;
+
+		@media screen and (max-width: 640px) {
+			min-width: 75vw !important;
+			width: 80vw;
+		}
+
 		color: grey;
 		background-color: pink;
 		height: 90vh;

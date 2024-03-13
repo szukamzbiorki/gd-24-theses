@@ -70,7 +70,7 @@
 	})
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 	.wheel {
 		overflow: visible !important;
 		height: 100vh !important;
