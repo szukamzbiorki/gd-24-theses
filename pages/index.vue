@@ -98,7 +98,8 @@
 			top: 0;
 			left: 0;
 			width: 100vw;
-			height: 100vh;
+			height: calc(100vh);
+			padding-bottom: 3rem;
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-start;
@@ -110,6 +111,10 @@
 
 			&.hide {
 				opacity: 0;
+			}
+
+			& > * {
+				padding-bottom: 2.7rem;
 			}
 
 			& > .left {
