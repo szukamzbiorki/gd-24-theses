@@ -173,6 +173,6 @@
 	}
 
 	.active-slide {
-		color: black;
+		color: white;
 	}
 </style>

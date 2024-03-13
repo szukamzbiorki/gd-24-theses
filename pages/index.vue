@@ -104,7 +104,7 @@
 			align-items: center;
 			pointer-events: none;
 			padding: var(--space-m);
-			background-color: rgba(250, 250, 250, 0.9);
+			background-color: rgba(30, 30, 30, 0.9);
 			transition: opacity 1s ease-in-out;
 
 			&.hide {

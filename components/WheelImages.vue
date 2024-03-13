@@ -160,7 +160,7 @@
 	}
 
 	.active-slide {
-		color: black;
+		color: white;
 		background-color: lightgreen;
 	}
 </style>
