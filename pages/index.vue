@@ -128,10 +128,12 @@
 			top: calc(50vh - 0.75rem);
 			left: var(--space-s);
 			width: calc(100vw - 2 * var(--space-s));
+			background-color: white;
+			mix-blend-mode: difference;
 			height: 1.4rem;
 			/* border-bottom: 1px dashed white; */
 			/* border-top: 1px dashed white; */
-			border: 1px dashed white;
+			/* outline: 1px dashed white; */
 		}
 	}
 </style>

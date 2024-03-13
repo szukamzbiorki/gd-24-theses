@@ -12,7 +12,7 @@ img {
 }
 
 :root {
-	--space-s: 4px;
+	--space-s: 6px;
 	--space-m: 10px;
 	--space-l: 6vw;
 	--space-xl: 14vw;
@@ -44,6 +44,10 @@ body {
 	min-height: 100vh;
 	box-sizing: border-box;
 	padding-top: calc(var(--header) + 4 * var(--space-m));
+}
+
+.keen-slider__slide {
+	transition: color 0.3s ease;
 }
 
 .wheel {
