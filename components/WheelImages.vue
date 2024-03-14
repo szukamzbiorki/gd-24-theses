@@ -110,7 +110,7 @@
 			duration: 500,
 		},
 		vertical: mobile.value ? false : true,
-		size: 1000,
+		size: 'auto',
 		created: (s) => {
 			s.slides[s.track.details.rel].classList.add('active-slide')
 		},
@@ -147,9 +147,9 @@
 	}
 
 	.keen-slider__slide {
-		min-height: 75vh !important;
+		min-height: 60vh !important;
 		max-height: 90vh !important;
-		height: 75vh;
+		height: 60vh;
 
 		@media screen and (max-width: 640px) {
 			min-width: 75vw !important;
@@ -158,7 +158,7 @@
 		width: 90%;
 
 		color: grey;
-		background-color: grey;
+		/* background-color: grey; */
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -169,7 +169,7 @@
 	.active-slide {
 		opacity: 1;
 		color: black;
-		background-color: white;
+		/* background-color: white; */
 	}
 
 	.image {
