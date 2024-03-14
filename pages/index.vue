@@ -18,7 +18,14 @@
 			@slideChanged="slideChangedImages"
 		></WheelImages>
 		<div class="abstract">
-			{{ truncateString(data.data[globalSlide].abstract, 500) }}
+			<div class="top">
+				<div class="left">KABK Graphic Design</div>
+				<div class="right">Graduation theses</div>
+				<div class="center">2024</div>
+			</div>
+			<div class="text">
+				{{ truncateString(data.data[globalSlide].abstract, 900) }}
+			</div>
 		</div>
 
 		<div class="landing" :class="{ hide: !landing }">
@@ -109,19 +116,28 @@
 			flex-direction: column;
 		}
 		& > .abstract {
+			& > .top {
+				display: flex;
+				justify-content: space-between;
+			}
 			position: absolute;
 			width: 50vw;
-			height: 25vh;
+			height: calc(50vh - 0.7rem);
 			text-overflow: ellipsis;
 			overflow: hidden;
 			left: 0;
 			padding: var(--space-m) 0 0 var(--space-m);
-			background: linear-gradient(
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding-bottom: 3px;
+			/* background: linear-gradient(
 				to bottom,
 				white 0%,
 				white 60%,
 				transparent 100%
-			);
+			); */
+			background-color: white;
 		}
 		& > .landing {
 			position: absolute;
