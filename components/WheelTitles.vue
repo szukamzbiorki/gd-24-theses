@@ -33,11 +33,6 @@
 		return sortedTitle.findIndex((obj) => obj.title === title)
 	}
 
-	function findNameIndex(glob) {
-		const name = props.data[glob].name
-		return props.data.findIndex((obj) => obj.name === name)
-	}
-
 	const localCopy = props.data.slice()
 
 	const sortedTitle = sortData(localCopy, 'title')

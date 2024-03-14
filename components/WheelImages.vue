@@ -6,7 +6,8 @@
 			class="keen-slider__slide"
 			:style="slide.style"
 		>
-			<span>{{ slide.name }}</span>
+			<img class="image" :src="`/images/${slide.image}`" alt="" srcset="" />
+			<!-- <span>{{ slide.name }}</span> -->
 		</div>
 	</div>
 </template>
@@ -162,12 +163,17 @@
 		justify-content: center;
 		align-items: center;
 		transition: all 0.3s ease;
-		opacity: 0.4;
+		opacity: 0.85;
 	}
 
 	.active-slide {
 		opacity: 1;
 		color: black;
 		background-color: white;
+	}
+
+	.image {
+		max-width: 90%;
+		max-height: 90%;
 	}
 </style>
