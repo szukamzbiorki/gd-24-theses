@@ -6,7 +6,12 @@
 			class="keen-slider__slide"
 			:style="slide.style"
 		>
-			<img class="image" :src="`/images/${slide.image}`" alt="" srcset="" />
+			<img
+				class="image"
+				:src="`/gd-24-theses/images/${slide.image}`"
+				alt=""
+				srcset=""
+			/>
 			<!-- <span>{{ slide.name }}</span> -->
 		</div>
 	</div>
