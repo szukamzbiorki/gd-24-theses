@@ -150,8 +150,4 @@
 		max-height: 20px !important;
 		color: grey;
 	}
-
-	.active-slide {
-		color: white;
-	}
 </style>

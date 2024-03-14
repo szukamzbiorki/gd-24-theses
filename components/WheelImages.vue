@@ -49,8 +49,8 @@
 		let wheelActive
 
 		function dispatch(e, name) {
-			position.x -= e.deltaX
-			position.y -= e.deltaY
+			position.x -= e.deltaX * 2
+			position.y -= e.deltaY * 2
 			slider.container.dispatchEvent(
 				new CustomEvent(name, {
 					detail: {
@@ -134,7 +134,7 @@
 		overflow: visible !important;
 		height: 100vh !important;
 		max-height: 100vh !important;
-		flex-grow: 1;
+		flex-grow: 2;
 
 		@media screen and (max-width: 640px) {
 			min-height: 79vh !important;
@@ -147,8 +147,8 @@
 
 	.keen-slider__slide {
 		min-height: 10vh !important;
-		/* max-height: 90vh !important; */
-		height: auto;
+		max-height: 90vh !important;
+		height: 80vh;
 
 		@media screen and (max-width: 640px) {
 			min-width: 75vw !important;
@@ -163,12 +163,6 @@
 		align-items: center;
 		transition: all 0.3s ease;
 		opacity: 0.85;
-	}
-
-	.active-slide {
-		opacity: 1;
-		color: black;
-		/* background-color: white; */
 	}
 
 	.image {

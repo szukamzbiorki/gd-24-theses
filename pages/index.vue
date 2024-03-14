@@ -109,9 +109,9 @@
 			align-items: center;
 			pointer-events: none;
 			padding: var(--space-m);
-			background-color: rgba(30, 30, 30, 0.9);
+			background-color: rgba(210, 210, 210, 0.9);
 			transition: opacity 1s ease-in-out;
-
+			color: black;
 			&.hide {
 				opacity: 0;
 			}

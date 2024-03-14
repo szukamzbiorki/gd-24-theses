@@ -151,7 +151,7 @@
 		overflow: visible !important;
 		height: 100vh !important;
 		max-height: 100vh !important;
-		flex-grow: 1;
+		flex-grow: 2;
 		@media screen and (max-width: 640px) {
 			min-height: 10vh !important;
 			height: 10vh !important;
@@ -168,9 +168,5 @@
 		@media screen and (max-width: 640px) {
 			text-align: center;
 		}
-	}
-
-	.active-slide {
-		color: white;
 	}
 </style>
