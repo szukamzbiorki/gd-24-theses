@@ -5,18 +5,22 @@
 			@slideChanged="slideChangedNames"
 			ref="wheelNames"
 		></WheelNames>
-		<WheelImages
-			:data="sortedNames"
-			:length="data.data?.length"
-			ref="wheelImages"
-			@slideChanged="slideChangedImages"
-		></WheelImages>
 		<WheelTitles
 			:data="sortedNames"
 			:length="data.data?.length"
 			ref="wheelTitles"
 			@slideChanged="slideChangedTitles"
 		></WheelTitles>
+		<WheelImages
+			:data="sortedNames"
+			:length="data.data?.length"
+			ref="wheelImages"
+			@slideChanged="slideChangedImages"
+		></WheelImages>
+		<div class="abstract">
+			{{ truncateString(data.data[globalSlide].abstract, 500) }}
+		</div>
+
 		<div class="landing" :class="{ hide: !landing }">
 			<div class="left">KABK</div>
 			<div class="center">Graduation theses—Graphic Design Department</div>
@@ -68,6 +72,14 @@
 		globalSlide.value = i
 	}
 
+	function truncateString(str, num) {
+		if (str.length > num) {
+			return str.slice(0, num) + '...'
+		} else {
+			return str
+		}
+	}
+
 	function slideChangedTitles(i) {
 		// const name = props.data[glob].name
 		// const ind = props.data.findIndex((obj) => obj.name === name)
@@ -95,6 +107,21 @@
 		gap: var(--space-m);
 		@media screen and (max-width: 640px) {
 			flex-direction: column;
+		}
+		& > .abstract {
+			position: absolute;
+			width: 50vw;
+			height: 25vh;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			left: 0;
+			padding: var(--space-m) 0 0 var(--space-m);
+			background: linear-gradient(
+				to bottom,
+				white 0%,
+				white 60%,
+				transparent 100%
+			);
 		}
 		& > .landing {
 			position: absolute;
@@ -143,10 +170,11 @@
 			}
 			& > .left {
 				left: var(--space-s);
-				width: calc(33.5vw - 2 * var(--space-s));
+				width: calc(50vw - 2 * var(--space-s));
 			}
 
 			& > .right {
+				display: none;
 				right: var(--space-s);
 				width: calc(34.25vw - 2 * var(--space-s));
 			}

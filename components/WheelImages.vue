@@ -134,8 +134,8 @@
 		overflow: visible !important;
 		height: 100vh !important;
 		max-height: 100vh !important;
-		flex-grow: 2;
-
+		/* flex-grow: 2; */
+		width: 52vw;
 		@media screen and (max-width: 640px) {
 			min-height: 79vh !important;
 			height: 79vh !important;
@@ -146,9 +146,9 @@
 	}
 
 	.keen-slider__slide {
-		min-height: 10vh !important;
+		min-height: 55vh !important;
 		max-height: 90vh !important;
-		height: 80vh;
+		height: 55vh;
 
 		@media screen and (max-width: 640px) {
 			min-width: 75vw !important;
@@ -168,5 +168,6 @@
 	.image {
 		max-width: 90%;
 		max-height: 90%;
+		object-fit: contain;
 	}
 </style>

@@ -133,8 +133,8 @@
 		overflow: visible !important;
 		height: 100vh !important;
 		max-height: 100vh !important;
-		/* width: 33vw !important; */
-		flex-grow: 1;
+		width: 16vw !important;
+		/* flex-grow: 1; */
 
 		@media screen and (max-width: 640px) {
 			min-height: 10vh !important;
