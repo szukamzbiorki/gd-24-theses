@@ -110,7 +110,7 @@
 			duration: 500,
 		},
 		vertical: mobile.value ? false : true,
-		size: 'auto',
+		size: 1000,
 		created: (s) => {
 			s.slides[s.track.details.rel].classList.add('active-slide')
 		},
@@ -147,9 +147,9 @@
 	}
 
 	.keen-slider__slide {
-		min-height: 60vh !important;
-		max-height: 90vh !important;
-		height: 60vh;
+		min-height: 10vh !important;
+		/* max-height: 90vh !important; */
+		height: auto;
 
 		@media screen and (max-width: 640px) {
 			min-width: 75vw !important;
