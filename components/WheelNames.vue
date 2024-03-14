@@ -57,11 +57,16 @@
 			s.slides[s.track.details.rel].classList.add('active-slide')
 		},
 		animationStarted(s) {
+			const abstract = document.querySelector('.text')
+			abstract.classList.add('hide')
+			console.log(abstract)
 			s.slides.forEach((slide) => {
 				slide.classList.remove('active-slide')
 			})
 		},
 		animationEnded: (s) => {
+			const abstract = document.querySelector('.text')
+			abstract.classList.remove('hide')
 			s.slides[s.track.details.rel].classList.add('active-slide')
 			// emit('slideChanged', s.track.details.rel)
 			globalSlide.value = s.track.details.rel

@@ -120,6 +120,14 @@
 				display: flex;
 				justify-content: space-between;
 			}
+
+			& > .text {
+				transition: opacity 0.3s ease;
+				opacity: 1;
+				&.hide {
+					opacity: 0;
+				}
+			}
 			position: absolute;
 			width: 50vw;
 			height: calc(50vh - 0.7rem);
