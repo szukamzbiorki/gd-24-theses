@@ -58,3 +58,8 @@ body {
 	opacity: 1;
 	color: black !important;
 }
+
+::selection {
+	background: darkgrey;
+	color: white;
+}
