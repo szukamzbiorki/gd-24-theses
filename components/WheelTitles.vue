@@ -152,7 +152,7 @@
 		height: 100vh !important;
 		max-height: 100vh !important;
 		/* flex-grow: 2; */
-		width: 32vw;
+		width: 34vw;
 		@media screen and (max-width: 640px) {
 			min-height: 10vh !important;
 			height: 10vh !important;

@@ -20,8 +20,8 @@
 		<div class="abstract">
 			<div class="top">
 				<div class="left">KABK Graphic Design</div>
-				<div class="right">Graduation theses</div>
-				<div class="center">2024</div>
+				<div class="center">Graduation theses</div>
+				<div class="right">2024</div>
 			</div>
 			<div class="text">
 				{{ truncateString(data.data[globalSlide].abstract, 900) }}
@@ -29,14 +29,18 @@
 		</div>
 
 		<div class="landing" :class="{ hide: !landing }">
-			<div class="left">KABK</div>
-			<div class="center">Graduation theses—Graphic Design Department</div>
-			<div class="right">2024</div>
+			<div class="content">
+				<div class="left">KABK Graphic Design</div>
+				<div class="center">Graduation theses</div>
+				<div class="right">2024</div>
+			</div>
 		</div>
-		<div class="line">
-			<div class="left"></div>
-			<div class="right"></div>
-		</div>
+		<a
+			:href="`https://kabk.github.io/${data.data[globalSlide].link}`"
+			class="line"
+		>
+			<div class="enter">ENTER</div>
+		</a>
 	</div>
 </template>
 
@@ -117,13 +121,25 @@
 		}
 		& > .abstract {
 			& > .top {
-				display: flex;
-				justify-content: space-between;
+				display: grid;
+				grid-template-columns: 16vw 1fr auto;
+				& > .left {
+					width: 16vw;
+				}
+
+				& > .center {
+					width: 16vw;
+				}
+
+				& > .right {
+					margin-left: auto;
+				}
 			}
 
 			& > .text {
 				transition: opacity 0.3s ease;
 				opacity: 1;
+				margin-left: calc(15.8vw);
 				&.hide {
 					opacity: 0;
 				}
@@ -155,9 +171,8 @@
 			height: calc(100vh);
 			padding-bottom: 3rem;
 			display: flex;
-			flex-direction: row;
-			justify-content: flex-start;
-			align-items: center;
+			flex-direction: column;
+			justify-content: center;
 			pointer-events: none;
 			padding: var(--space-m);
 			background-color: rgba(210, 210, 210, 0.9);
@@ -166,41 +181,44 @@
 			&.hide {
 				opacity: 0;
 			}
-
-			& > * {
-				padding-bottom: 2.7rem;
-			}
-
-			& > .left {
-				width: 15vw !important;
-			}
-			& > .center {
-				width: 33vw !important;
-			}
-			& > .right {
-				/* width: 50vw !important; */
+			& > .content {
+				display: grid;
+				grid-template-columns: 16vw 1fr auto;
+				max-width: calc(50vw - var(--space-s));
+				& > * {
+					padding-bottom: 2.7rem;
+					display: inline-block;
+				}
 			}
 		}
 
 		& > .line {
-			pointer-events: none;
-			& > * {
-				position: absolute;
-				top: calc(50vh - 0.75rem);
+			color: black;
+			text-decoration: none;
+			position: absolute;
+			top: calc(50vh - 0.75rem);
 
-				background-color: white;
-				mix-blend-mode: difference;
-				height: 1.4rem;
-			}
-			& > .left {
-				left: var(--space-s);
-				width: calc(50vw - 2 * var(--space-s));
-			}
+			background-color: white;
+			mix-blend-mode: difference;
+			height: 1.4rem;
+			left: var(--space-s);
+			width: calc(50vw);
+			cursor: pointer;
+			transition: width 0.7s ease;
+			display: flex;
+			flex-direction: row-reverse;
+			padding-top: 1.7px;
+			padding-right: 2.8px;
 
-			& > .right {
-				display: none;
-				right: var(--space-s);
-				width: calc(34.25vw - 2 * var(--space-s));
+			& > .enter {
+				opacity: 0;
+				transition: opacity 0.7s ease;
+			}
+			&:hover {
+				width: calc(99vw);
+				& > .enter {
+					opacity: 1;
+				}
 			}
 		}
 	}
