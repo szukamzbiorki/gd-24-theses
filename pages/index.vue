@@ -41,9 +41,8 @@
 		<a
 			:href="`https://kabk.github.io/${data.data[globalSlide].link}`"
 			class="line"
+			><div class="enter">↗</div></a
 		>
-			<div class="enter">ENTER</div>
-		</a>
 		<a
 			:href="`https://kabk.github.io/${data.data[globalSlide].link}`"
 			class="mobilecontainer"
@@ -216,7 +215,7 @@
 			color: black;
 			text-decoration: none;
 			position: absolute;
-			top: calc(50vh - 0.75rem);
+			top: calc(50vh - 0.82rem);
 			background-color: white;
 			mix-blend-mode: difference;
 			height: 1.4rem;
@@ -227,14 +226,14 @@
 			display: flex;
 			flex-direction: row-reverse;
 			padding-top: 1.7px;
-			padding-right: 2.8px;
+			/* padding-right: 2.8px; */
 
 			& > .enter {
-				opacity: 0;
+				aspect-ratio: 1;
+				/* background-image: url('arrow.svg'); */
+				/* filter: invert(); */
+				opacity: 1;
 				transition: opacity 0.7s ease;
-			}
-			& > .enter {
-				/* opacity: 1; */
 			}
 
 			@media screen and (max-width: 640px) {
