@@ -23,5 +23,5 @@ export default defineNuxtConfig({
 		},
 	},
 	modules: ['@vueuse/nuxt', '@nuxt/image', '@nuxt/content'],
-	ssr: true,
+	ssr: false,
 })

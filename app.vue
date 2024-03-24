@@ -1,5 +1,5 @@
 <template>
-	<div :style="{ '--window-height': `${windowHeight}px` }">
+	<div :style="{ '--window-height': `${height}px` }">
 		<NuxtLayout>
 			<NuxtPage />
 		</NuxtLayout>
@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-	const { height: windowHeight } = useWindowSize()
+	const { height } = useWindowSize()
 
 	const meta = {
 		title: 'gd-24-theses',

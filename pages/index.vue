@@ -189,7 +189,7 @@
 			justify-content: center;
 			pointer-events: none;
 			padding: var(--space-m);
-			background-color: rgba(210, 210, 210, 0.9);
+			background-color: white;
 			transition: opacity 1s ease-in-out;
 			color: black;
 			&.hide {
@@ -200,7 +200,7 @@
 				grid-template-columns: 16vw 1fr auto;
 				max-width: calc(50vw - var(--space-s));
 				& > * {
-					padding-bottom: 2.7rem;
+					/* padding-bottom: 2.7rem; */
 					display: inline-block;
 				}
 				@media screen and (max-width: 640px) {
