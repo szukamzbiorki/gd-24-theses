@@ -4,18 +4,21 @@
 			:data="sortedNames"
 			@slideChanged="slideChangedNames"
 			ref="wheelNames"
+			class="names"
 		></WheelNames>
 		<WheelTitles
 			:data="sortedNames"
 			:length="data.data?.length"
 			ref="wheelTitles"
 			@slideChanged="slideChangedTitles"
+			class="titles"
 		></WheelTitles>
 		<WheelImages
 			:data="sortedNames"
 			:length="data.data?.length"
 			ref="wheelImages"
 			@slideChanged="slideChangedImages"
+			class="images"
 		></WheelImages>
 		<div class="abstract">
 			<div class="top">
@@ -40,6 +43,15 @@
 			class="line"
 		>
 			<div class="enter">ENTER</div>
+		</a>
+		<a
+			:href="`https://kabk.github.io/${data.data[globalSlide].link}`"
+			class="mobilecontainer"
+		>
+			<div class="title">{{ data.data[globalSlide].title }}</div>
+			<div class="abst">
+				{{ truncateString(data.data[globalSlide].abstract, 140) }}
+			</div>
 		</a>
 	</div>
 </template>
@@ -118,21 +130,22 @@
 		gap: var(--space-m);
 		@media screen and (max-width: 640px) {
 			flex-direction: column;
+			display: block;
+		}
+		& > .titles {
+			display: block;
+			@media screen and (max-width: 640px) {
+				display: none;
+			}
 		}
 		& > .abstract {
 			& > .top {
 				display: grid;
 				grid-template-columns: 16vw 1fr auto;
-				& > .left {
-					width: 16vw;
-				}
-
-				& > .center {
-					width: 16vw;
-				}
-
-				& > .right {
-					margin-left: auto;
+				@media screen and (max-width: 640px) {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
 				}
 			}
 
@@ -142,6 +155,9 @@
 				margin-left: calc(15.8vw);
 				&.hide {
 					opacity: 0;
+				}
+				@media screen and (max-width: 640px) {
+					display: none;
 				}
 			}
 			position: absolute;
@@ -155,13 +171,11 @@
 			flex-direction: column;
 			justify-content: space-between;
 			padding-bottom: 3px;
-			/* background: linear-gradient(
-				to bottom,
-				white 0%,
-				white 60%,
-				transparent 100%
-			); */
 			background-color: white;
+			@media screen and (max-width: 640px) {
+				width: calc(100vw - 2 * var(--space-m));
+				height: auto;
+			}
 		}
 		& > .landing {
 			position: absolute;
@@ -189,6 +203,12 @@
 					padding-bottom: 2.7rem;
 					display: inline-block;
 				}
+				@media screen and (max-width: 640px) {
+					max-width: calc(100vw - 2 * var(--space-m));
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+				}
 			}
 		}
 
@@ -197,7 +217,6 @@
 			text-decoration: none;
 			position: absolute;
 			top: calc(50vh - 0.75rem);
-
 			background-color: white;
 			mix-blend-mode: difference;
 			height: 1.4rem;
@@ -218,6 +237,34 @@
 				width: calc(99vw);
 				& > .enter {
 					opacity: 1;
+				}
+			}
+
+			@media screen and (max-width: 640px) {
+				width: calc(100vw);
+				top: 52vh;
+				left: 0;
+			}
+		}
+
+		& > .mobilecontainer {
+			display: none;
+			color: black;
+			text-decoration: none;
+			@media screen and (max-width: 640px) {
+				display: block;
+				position: absolute;
+				bottom: 48vh;
+				left: 0;
+				z-index: 1;
+				background-color: white;
+				& > .title {
+					background-color: black;
+					color: white;
+					padding: var(--space-s) var(--space-m);
+				}
+				& > .abst {
+					padding: var(--space-s) var(--space-m);
 				}
 			}
 		}

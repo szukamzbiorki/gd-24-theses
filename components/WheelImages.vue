@@ -141,19 +141,22 @@
 		max-height: 100vh !important;
 		/* flex-grow: 2; */
 		width: 52vw;
+		background-color: white;
 		@media screen and (max-width: 640px) {
-			min-height: 79vh !important;
-			height: 79vh !important;
-			max-height: 79vh !important;
+			position: absolute;
+			top: 2rem;
+			min-height: 38.7vh !important;
+			height: 38.7vh !important;
+			max-height: 38.7vh !important;
 			width: 90vw !important;
 			overflow: hidden !important;
 		}
 	}
 
 	.keen-slider__slide {
-		min-height: 55vh !important;
-		max-height: 90vh !important;
-		height: 55vh;
+		min-height: 38.7vh !important;
+		max-height: 38.7vh !important;
+		height: 38.7vh;
 
 		@media screen and (max-width: 640px) {
 			min-width: 75vw !important;

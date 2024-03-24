@@ -20,6 +20,7 @@
 	})
 
 	const { height, width } = useWindowSize()
+	const { mobile } = useScreenSize()
 
 	const globalSlide = useGlobalSlide()
 
@@ -139,12 +140,15 @@
 		height: 100vh !important;
 		max-height: 100vh !important;
 		width: 16vw !important;
+
 		/* flex-grow: 1; */
 
 		@media screen and (max-width: 640px) {
-			min-height: 10vh !important;
-			height: 10vh !important;
-			max-height: 10vh !important;
+			position: absolute;
+			bottom: 0vh;
+			min-height: calc(100vh - 4rem) !important;
+			height: calc(100vh - 4rem) !important;
+			max-height: calc(100vh - 4rem) !important;
 			width: 90vw !important;
 			overflow: hidden !important;
 		}
