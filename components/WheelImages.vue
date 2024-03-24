@@ -145,10 +145,11 @@
 		@media screen and (max-width: 640px) {
 			position: absolute;
 			top: 2rem;
+			left: 0;
 			min-height: 38.7vh !important;
 			height: 38.7vh !important;
 			max-height: 38.7vh !important;
-			width: 90vw !important;
+			width: 100vw !important;
 			overflow: hidden !important;
 		}
 	}
@@ -160,7 +161,7 @@
 
 		@media screen and (max-width: 640px) {
 			min-width: 75vw !important;
-			width: 80vw;
+			width: 67vw;
 		}
 		width: 90%;
 
