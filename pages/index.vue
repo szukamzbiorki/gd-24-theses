@@ -227,7 +227,7 @@
 			display: flex;
 			flex-direction: row-reverse;
 			padding-top: 1.7px;
-			/* padding-right: 2.8px; */
+			padding-right: 5px;
 
 			&.hide {
 				& > .enter {
@@ -236,7 +236,6 @@
 			}
 
 			& > .enter {
-				aspect-ratio: 1;
 				opacity: 0;
 				transition: opacity 0.7s ease;
 			}
@@ -269,5 +268,9 @@
 				}
 			}
 		}
+	}
+
+	.center {
+		text-transform: uppercase;
 	}
 </style>
