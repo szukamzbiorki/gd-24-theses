@@ -233,11 +233,8 @@
 				opacity: 0;
 				transition: opacity 0.7s ease;
 			}
-			&:hover {
-				width: calc(99vw);
-				& > .enter {
-					opacity: 1;
-				}
+			& > .enter {
+				opacity: 1;
 			}
 
 			@media screen and (max-width: 640px) {
