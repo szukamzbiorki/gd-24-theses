@@ -234,7 +234,7 @@
 				transition: opacity 0.7s ease;
 			}
 			& > .enter {
-				opacity: 1;
+				/* opacity: 1; */
 			}
 
 			@media screen and (max-width: 640px) {
