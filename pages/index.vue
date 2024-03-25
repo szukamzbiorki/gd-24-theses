@@ -242,10 +242,6 @@
 				}
 
 				& > .credits {
-					position: absolute;
-					top: 50vh;
-					left: 0;
-					z-index: 1;
 					user-select: none;
 					background-color: white;
 					opacity: 1;
@@ -393,6 +389,7 @@
 			}
 		}
 		& > .credits {
+			display: none;
 			position: absolute;
 			top: 1.8rem;
 			left: 0;
@@ -411,6 +408,9 @@
 						display: block;
 					}
 				}
+			}
+			@media screen and (max-width: 640px) {
+				display: block;
 			}
 		}
 	}
