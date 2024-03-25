@@ -103,7 +103,11 @@
 				</div>
 			</a>
 			<div v-if="showCredit" class="credits">
-				<div class="line">
+				Thesis Supervisors: Dirk Vis and Prof. Dr. Füsun Türetken<br />Visual
+				Essay Supervisor: Bart de Baets<br />Coding Supervisors: Thomas Buxo,
+				François Girard-Meunier<br />Website made by Aliona Ciobanu, Bartosz
+				Pierściński, Dans Jirgensons, Stefaniia Bodnia
+				<!-- <div class="line">
 					<div class="label">Thesis Supervisors</div>
 					<div class="persons">
 						<span class="person">Dirk Vis</span>
@@ -137,7 +141,7 @@
 					<div class="persons">
 						<span class="person">Bartek Pierściński</span>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</ClientOnly>
