@@ -312,6 +312,7 @@
 				width: calc(100vw);
 				padding: var(--space-s);
 				height: auto;
+				padding-left: var(--space-m);
 			}
 		}
 		& > .landing {
@@ -415,7 +416,7 @@
 			background-color: white;
 			opacity: 1;
 			width: 100vw;
-			padding-left: var(--space-s);
+			padding-left: var(--space-m);
 
 			& > .line {
 				display: grid;
