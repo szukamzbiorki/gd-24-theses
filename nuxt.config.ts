@@ -17,7 +17,7 @@ export default defineNuxtConfig({
 				{
 					rel: 'icon',
 					type: 'image/x-icon',
-					href: '/go-theses-24-bartek-pierscinski/favicon.ico',
+					href: '/gd-24-theses/favicon.ico',
 				},
 			],
 		},
