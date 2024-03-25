@@ -1,6 +1,12 @@
 <template>
 	<ClientOnly>
-		<div :style="{ '--window-height': `${height}px` }" id="index">
+		<div
+			:style="[
+				{ '--window-height': `${height}px` },
+				{ '--cred-height': `${h}px` },
+			]"
+			id="index"
+		>
 			<WheelNames
 				:data="sortedNames"
 				@slideChanged="slideChangedNames"
@@ -27,10 +33,14 @@
 					<div class="center">Graduation theses</div>
 					<div class="right">2024</div>
 					<div @click="showCredit = !showCredit" class="credit">
-						{{ showCredit ? '[Close]' : '[Credits]' }}
+						{{ showCredit ? 'Close' : 'Credits' }}
 					</div>
 					<div v-if="showCredit" class="credits">
-						<div class="line">
+						Thesis Supervisors: Dirk Vis and Prof. Dr. Füsun Türetken<br />Visual
+						Essay Supervisor: Bart de Baets<br />Coding Supervisors: Thomas
+						Buxo, François Girard-Meunier<br />Website made by Aliona Ciobanu,
+						Bartosz Pierściński, Dans Jirgensons, Stefaniia Bodnia
+						<!-- <div class="line">
 							<div class="label">Thesis Supervisors</div>
 							<div class="persons">
 								<span class="person">Dirk Vis</span>
@@ -58,13 +68,7 @@
 								<span class="person">Dans Jirgensons</span>
 								<span class="person">Stefaniia Bodnia</span>
 							</div>
-						</div>
-						<div class="line">
-							<div class="label">Website development</div>
-							<div class="persons">
-								<span class="person">Bartek Pierściński</span>
-							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="text">
@@ -91,6 +95,7 @@
 			<a
 				:href="`https://kabk.github.io/${data.data[globalSlide].link}`"
 				class="mobilecontainer"
+				ref="mobilecreds"
 			>
 				<div class="title">{{ data.data[globalSlide].title }}</div>
 				<div class="abst">
@@ -144,6 +149,10 @@
 	)
 
 	const { height } = useWindowSize()
+
+	const mobilecreds = ref(null)
+
+	const { height: h } = useElementSize(mobilecreds)
 
 	const sortedNames = sortData(data.value.data, 'name')
 
@@ -231,7 +240,7 @@
 				}
 
 				& > .credit {
-					color: lightgrey;
+					/* color: lightgrey; */
 					cursor: pointer;
 					user-select: none;
 				}
