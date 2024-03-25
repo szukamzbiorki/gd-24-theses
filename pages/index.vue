@@ -245,6 +245,9 @@
 					user-select: none;
 					background-color: white;
 					opacity: 1;
+					@media screen and (max-width: 640px) {
+						display: none;
+					}
 
 					& > .line {
 						display: grid;
@@ -362,7 +365,7 @@
 
 			@media screen and (max-width: 640px) {
 				width: calc(100vw);
-				top: 52vh;
+				top: 48.5vh;
 				left: 0;
 			}
 		}
@@ -374,7 +377,7 @@
 			@media screen and (max-width: 640px) {
 				display: block;
 				position: absolute;
-				bottom: 48vh;
+				bottom: 51.5vh;
 				left: 0;
 				z-index: 1;
 				background-color: white;
