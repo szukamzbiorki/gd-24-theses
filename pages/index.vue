@@ -1,145 +1,149 @@
 <template>
-	<div id="index">
-		<WheelNames
-			:data="sortedNames"
-			@slideChanged="slideChangedNames"
-			ref="wheelNames"
-			class="names"
-		></WheelNames>
-		<WheelTitles
-			:data="sortedNames"
-			:length="data.data?.length"
-			ref="wheelTitles"
-			@slideChanged="slideChangedTitles"
-			class="titles"
-		></WheelTitles>
-		<WheelImages
-			:data="sortedNames"
-			:length="data.data?.length"
-			ref="wheelImages"
-			@slideChanged="slideChangedImages"
-			class="images"
-		></WheelImages>
-		<div class="abstract">
-			<div class="top">
-				<div class="left">KABK Graphic Design</div>
-				<div class="center">Graduation theses</div>
-				<div class="right">2024</div>
-				<div @click="showCredit = !showCredit" class="credit">
-					{{ showCredit ? '[Close]' : '[Credits]' }}
+	<ClientOnly>
+		<div :style="{ '--window-height': `${height}px` }" id="index">
+			<WheelNames
+				:data="sortedNames"
+				@slideChanged="slideChangedNames"
+				ref="wheelNames"
+				class="names"
+			></WheelNames>
+			<WheelTitles
+				:data="sortedNames"
+				:length="data.data?.length"
+				ref="wheelTitles"
+				@slideChanged="slideChangedTitles"
+				class="titles"
+			></WheelTitles>
+			<WheelImages
+				:data="sortedNames"
+				:length="data.data?.length"
+				ref="wheelImages"
+				@slideChanged="slideChangedImages"
+				class="images"
+			></WheelImages>
+			<div class="abstract">
+				<div class="top">
+					<div class="left">KABK Graphic Design</div>
+					<div class="center">Graduation theses</div>
+					<div class="right">2024</div>
+					<div @click="showCredit = !showCredit" class="credit">
+						{{ showCredit ? '[Close]' : '[Credits]' }}
+					</div>
+					<div v-if="showCredit" class="credits">
+						<div class="line">
+							<div class="label">Thesis Supervisors</div>
+							<div class="persons">
+								<span class="person">Dirk Vis</span>
+								<span class="person">Prof. Dr. Füsun Türetken</span>
+							</div>
+						</div>
+						<div class="line">
+							<div class="label">Visual Essay Supervisor</div>
+							<div class="persons">
+								<span class="person">Bart de Baets</span>
+							</div>
+						</div>
+						<div class="line">
+							<div class="label">Coding Supervisors</div>
+							<div class="persons">
+								<span class="person">Thomas Buxo</span>
+								<span class="person">François Girard-Meunier</span>
+							</div>
+						</div>
+						<div class="line">
+							<div class="label">Website design</div>
+							<div class="persons">
+								<span class="person">Aliona Ciobanu</span>
+								<span class="person">Bartek Pierściński</span>
+								<span class="person">Dans Jirgensons</span>
+								<span class="person">Stefaniia Bodnia</span>
+							</div>
+						</div>
+						<div class="line">
+							<div class="label">Website development</div>
+							<div class="persons">
+								<span class="person">Bartek Pierściński</span>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div v-if="showCredit" class="credits">
-					<div class="line">
-						<div class="label">Thesis Supervisors</div>
-						<div class="persons">
-							<span class="person">Dirk Vis</span>
-							<span class="person">Prof. Dr. Füsun Türetken</span>
-						</div>
-					</div>
-					<div class="line">
-						<div class="label">Visual Essay Supervisor</div>
-						<div class="persons">
-							<span class="person">Bart de Baets</span>
-						</div>
-					</div>
-					<div class="line">
-						<div class="label">Coding Supervisors</div>
-						<div class="persons">
-							<span class="person">Thomas Buxo</span>
-							<span class="person">François Girard-Meunier</span>
-						</div>
-					</div>
-					<div class="line">
-						<div class="label">Website design</div>
-						<div class="persons">
-							<span class="person">Aliona Ciobanu</span>
-							<span class="person">Bartek Pierściński</span>
-							<span class="person">Dans Jirgensons</span>
-							<span class="person">Stefaniia Bodnia</span>
-						</div>
-					</div>
-					<div class="line">
-						<div class="label">Website development</div>
-						<div class="persons">
-							<span class="person">Bartek Pierściński</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="text">
-				<div class="label">Abstract</div>
 				<div class="text">
-					{{ truncateString(data.data[globalSlide].abstract, 900) }}
+					<div class="label">Abstract</div>
+					<div class="text">
+						{{ truncateString(data.data[globalSlide].abstract, 900) }}
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="landing" :class="{ hide: !landing }">
-			<div class="content">
-				<div class="left">KABK Graphic Design</div>
-				<div class="center">Graduation theses</div>
-				<div class="right">2024</div>
+			<div class="landing" :class="{ hide: !landing }">
+				<div class="content">
+					<div class="left">KABK Graphic Design</div>
+					<div class="center">Graduation theses</div>
+					<div class="right">2024</div>
+				</div>
+			</div>
+			<a
+				:href="`https://kabk.github.io/${data.data[globalSlide].link}`"
+				class="line"
+				:class="{ hide: !landing }"
+				><div class="enter">↗</div></a
+			>
+			<a
+				:href="`https://kabk.github.io/${data.data[globalSlide].link}`"
+				class="mobilecontainer"
+			>
+				<div class="title">{{ data.data[globalSlide].title }}</div>
+				<div class="abst">
+					{{ truncateString(data.data[globalSlide].abstract, 140) }}
+				</div>
+			</a>
+			<div v-if="showCredit" class="credits">
+				<div class="line">
+					<div class="label">Thesis Supervisors</div>
+					<div class="persons">
+						<span class="person">Dirk Vis</span>
+						<span class="person">Prof. Dr. Füsun Türetken</span>
+					</div>
+				</div>
+				<div class="line">
+					<div class="label">Visual Essay Supervisor</div>
+					<div class="persons">
+						<span class="person">Bart de Baets</span>
+					</div>
+				</div>
+				<div class="line">
+					<div class="label">Coding Supervisors</div>
+					<div class="persons">
+						<span class="person">Thomas Buxo</span>
+						<span class="person">François Girard-Meunier</span>
+					</div>
+				</div>
+				<div class="line">
+					<div class="label">Website design</div>
+					<div class="persons">
+						<span class="person">Aliona Ciobanu</span>
+						<span class="person">Bartek Pierściński</span>
+						<span class="person">Dans Jirgensons</span>
+						<span class="person">Stefaniia Bodnia</span>
+					</div>
+				</div>
+				<div class="line">
+					<div class="label">Website development</div>
+					<div class="persons">
+						<span class="person">Bartek Pierściński</span>
+					</div>
+				</div>
 			</div>
 		</div>
-		<a
-			:href="`https://kabk.github.io/${data.data[globalSlide].link}`"
-			class="line"
-			:class="{ hide: !landing }"
-			><div class="enter">↗</div></a
-		>
-		<a
-			:href="`https://kabk.github.io/${data.data[globalSlide].link}`"
-			class="mobilecontainer"
-		>
-			<div class="title">{{ data.data[globalSlide].title }}</div>
-			<div class="abst">
-				{{ truncateString(data.data[globalSlide].abstract, 140) }}
-			</div>
-		</a>
-		<div v-if="showCredit" class="credits">
-			<div class="line">
-				<div class="label">Thesis Supervisors</div>
-				<div class="persons">
-					<span class="person">Dirk Vis</span>
-					<span class="person">Prof. Dr. Füsun Türetken</span>
-				</div>
-			</div>
-			<div class="line">
-				<div class="label">Visual Essay Supervisor</div>
-				<div class="persons">
-					<span class="person">Bart de Baets</span>
-				</div>
-			</div>
-			<div class="line">
-				<div class="label">Coding Supervisors</div>
-				<div class="persons">
-					<span class="person">Thomas Buxo</span>
-					<span class="person">François Girard-Meunier</span>
-				</div>
-			</div>
-			<div class="line">
-				<div class="label">Website design</div>
-				<div class="persons">
-					<span class="person">Aliona Ciobanu</span>
-					<span class="person">Bartek Pierściński</span>
-					<span class="person">Dans Jirgensons</span>
-					<span class="person">Stefaniia Bodnia</span>
-				</div>
-			</div>
-			<div class="line">
-				<div class="label">Website development</div>
-				<div class="persons">
-					<span class="person">Bartek Pierściński</span>
-				</div>
-			</div>
-		</div>
-	</div>
+	</ClientOnly>
 </template>
 
 <script setup>
 	const { data } = await useAsyncData('data', () =>
 		queryContent('/data').findOne()
 	)
+
+	const { height } = useWindowSize()
 
 	const sortedNames = sortData(data.value.data, 'name')
 
@@ -162,7 +166,7 @@
 			if (propA > propB) {
 				return 1
 			}
-			return 0 // Names are equal
+			return 0
 		})
 		return s
 	}
@@ -192,9 +196,6 @@
 	}
 
 	function slideChangedImages(i) {
-		// const name = props.data[glob].name
-		// const ind = props.data.findIndex((obj) => obj.name === name)
-		// slider.value.moveToIdx(ind)
 		globalSlide.value = i
 	}
 </script>

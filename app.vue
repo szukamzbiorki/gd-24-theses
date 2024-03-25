@@ -1,5 +1,5 @@
 <template>
-	<div :style="{ '--window-height': `${height}px` }">
+	<div>
 		<NuxtLayout>
 			<NuxtPage />
 		</NuxtLayout>
@@ -7,8 +7,6 @@
 </template>
 
 <script setup>
-	const { height } = useWindowSize()
-
 	const meta = {
 		title: 'gd-24-theses',
 		desc: 'Turnus—a gallery, café, bookstore and much more on Wolska Street in Warsaw. Come to see our exhibitions with young, talented Polish artists, drink delicious coffee and take part in a variety of events every day.',
