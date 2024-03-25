@@ -5,9 +5,10 @@
 			:key="index"
 			class="keen-slider__slide"
 		>
-			<NuxtMarquee autoFill="true">
+			<NuxtMarquee v-if="index == findTitleIndex(globalSlide)" autoFill="true">
 				<span>{{ slide.title }}</span>
 			</NuxtMarquee>
+			<span v-else>{{ slide.title }}</span>
 		</div>
 	</div>
 </template>
