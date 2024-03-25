@@ -416,6 +416,6 @@
 	}
 
 	.center {
-		text-transform: uppercase;
+		text-transform: capitalize;
 	}
 </style>
