@@ -29,7 +29,9 @@
 			></WheelImages>
 			<div class="abstract">
 				<div class="top">
-					<div class="left">KABK Graphic Design</div>
+					<div class="left">
+						{{ mobile ? 'KABK GD' : 'KABK Graphic Design' }}
+					</div>
 					<div class="center">Graduation theses</div>
 					<div class="right">2024</div>
 					<div @click="showCredit = !showCredit" class="credit">
@@ -153,6 +155,7 @@
 	)
 
 	const { height } = useWindowSize()
+	const { mobile } = useScreenSize()
 
 	const mobilecreds = ref(null)
 
@@ -399,7 +402,7 @@
 				& > .title {
 					background-color: black;
 					color: white;
-					padding: var(--space-s) var(--space-m);
+					padding: var(--space-s) var(--space-m) 0 var(--space-m);
 				}
 				& > .abst {
 					padding: var(--space-s) var(--space-m);
