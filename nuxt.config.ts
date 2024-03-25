@@ -22,6 +22,6 @@ export default defineNuxtConfig({
 			],
 		},
 	},
-	modules: ['@vueuse/nuxt', '@nuxt/image', '@nuxt/content'],
+	modules: ['@vueuse/nuxt', '@nuxt/image', '@nuxt/content', 'nuxt-marquee'],
 	ssr: true,
 })

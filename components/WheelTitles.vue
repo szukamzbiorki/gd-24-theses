@@ -5,7 +5,9 @@
 			:key="index"
 			class="keen-slider__slide"
 		>
-			<span>{{ slide.title }}</span>
+			<NuxtMarquee>
+				<span>{{ slide.title }}</span>
+			</NuxtMarquee>
 		</div>
 	</div>
 </template>
