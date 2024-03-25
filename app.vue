@@ -1,11 +1,9 @@
 <template>
-	<ClientOnly>
-		<div :style="{ '--window-height': `${height}px` }">
-			<NuxtLayout>
-				<NuxtPage />
-			</NuxtLayout>
-		</div>
-	</ClientOnly>
+	<div :style="{ '--window-height': `${height}px` }">
+		<NuxtLayout>
+			<NuxtPage />
+		</NuxtLayout>
+	</div>
 </template>
 
 <script setup>
