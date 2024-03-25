@@ -155,13 +155,15 @@
 	}
 
 	.keen-slider__slide {
-		min-height: 38.7vh !important;
-		max-height: 38.7vh !important;
-		height: 38.7vh;
-
+		min-height: 47.5vh !important;
+		max-height: 47.5vh !important;
+		height: 47.5vh;
 		@media screen and (max-width: 640px) {
 			min-width: 75vw !important;
 			width: 67vw;
+			min-height: 38.7vh !important;
+			max-height: 38.7vh !important;
+			height: 38.7vh;
 		}
 		width: 90%;
 

@@ -25,9 +25,52 @@
 				<div class="left">KABK Graphic Design</div>
 				<div class="center">Graduation theses</div>
 				<div class="right">2024</div>
+				<div @click="showCredit = !showCredit" class="credit">
+					{{ showCredit ? '[Close]' : '[Credits]' }}
+				</div>
+				<div v-if="showCredit" class="credits">
+					<div class="line">
+						<div class="label">Thesis Supervisors</div>
+						<div class="persons">
+							<span class="person">Dirk Vis</span>
+							<span class="person">Prof. Dr. Füsun Türetken</span>
+						</div>
+					</div>
+					<div class="line">
+						<div class="label">Visual Essay Supervisor</div>
+						<div class="persons">
+							<span class="person">Bart de Baets</span>
+						</div>
+					</div>
+					<div class="line">
+						<div class="label">Coding Supervisors</div>
+						<div class="persons">
+							<span class="person">Thomas Buxo</span>
+							<span class="person">François Girard-Meunier</span>
+						</div>
+					</div>
+					<div class="line">
+						<div class="label">Website design</div>
+						<div class="persons">
+							<span class="person">Aliona Ciobanu</span>
+							<span class="person">Bartek Pierściński</span>
+							<span class="person">Dans Jirgensons</span>
+							<span class="person">Stefaniia Bodnia</span>
+						</div>
+					</div>
+					<div class="line">
+						<div class="label">Website development</div>
+						<div class="persons">
+							<span class="person">Bartek Pierściński</span>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="text">
-				{{ truncateString(data.data[globalSlide].abstract, 900) }}
+				<div class="label">Abstract</div>
+				<div class="text">
+					{{ truncateString(data.data[globalSlide].abstract, 900) }}
+				</div>
 			</div>
 		</div>
 
@@ -64,6 +107,7 @@
 	const sortedNames = sortData(data.value.data, 'name')
 
 	const landing = ref(true)
+	const showCredit = ref(false)
 
 	onMounted(() => {
 		setTimeout(() => {
@@ -147,14 +191,43 @@
 					flex-direction: row;
 					justify-content: space-between;
 				}
+
+				& > .credit {
+					color: lightgrey;
+					cursor: pointer;
+					user-select: none;
+				}
+
+				& > .credits {
+					user-select: none;
+					& > .line {
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						& > .persons {
+							& > * {
+								display: block;
+							}
+						}
+					}
+				}
 			}
 
 			& > .text {
-				transition: opacity 0.3s ease;
 				opacity: 1;
-				margin-left: calc(15.8vw);
+				display: flex;
+				flex-direction: row;
+				& > .label {
+					min-width: calc(16vw);
+				}
+
+				& > .text {
+					transition: opacity 0.3s ease;
+					min-width: calc(16vw);
+				}
 				&.hide {
-					opacity: 0;
+					& > .text {
+						opacity: 0;
+					}
 				}
 				@media screen and (max-width: 640px) {
 					display: none;
