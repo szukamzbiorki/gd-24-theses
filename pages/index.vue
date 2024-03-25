@@ -36,7 +36,7 @@
 						{{ showCredit ? 'Close' : 'Credits' }}
 					</div>
 					<div v-if="showCredit" class="credits">
-						Thesis Supervisors: Dirk Vis and Prof. Dr. Füsun Türetken<br />Visual
+						Thesis Supervisors: Dirk Vis, Prof. Dr. Füsun Türetken<br />Visual
 						Essay Supervisor: Bart de Baets<br />Coding Supervisors: Thomas
 						Buxo, François Girard-Meunier<br />Website made by Aliona Ciobanu,
 						Bartosz Pierściński, Dans Jirgensons, Stefaniia Bodnia
@@ -103,10 +103,10 @@
 				</div>
 			</a>
 			<div v-if="showCredit" class="credits">
-				Thesis Supervisors: Dirk Vis and Prof. Dr. Füsun Türetken<br />Visual
-				Essay Supervisor: Bart de Baets<br />Coding Supervisors: Thomas Buxo,
-				François Girard-Meunier<br />Website made by Aliona Ciobanu, Bartosz
-				Pierściński, Dans Jirgensons, Stefaniia Bodnia
+				Thesis Supervisors: Dirk Vis, Prof. Dr. Füsun Türetken<br />Visual Essay
+				Supervisor: Bart de Baets<br />Coding Supervisors: Thomas Buxo, François
+				Girard-Meunier<br />Website made by Aliona Ciobanu, Bartosz Pierściński,
+				Dans Jirgensons, Stefaniia Bodnia
 				<!-- <div class="line">
 					<div class="label">Thesis Supervisors</div>
 					<div class="persons">
