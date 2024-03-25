@@ -146,9 +146,9 @@
 		@media screen and (max-width: 640px) {
 			position: absolute;
 			bottom: 0vh;
-			min-height: var(--window-height) !important;
-			height: var(--window-height) !important;
-			max-height: var(--window-height) !important;
+			min-height: calc(var(--window-height) * 0.8) !important;
+			height: calc(var(--window-height) * 0.8) !important;
+			max-height: calc(var(--window-height) * 0.8) !important;
 			width: 90vw !important;
 			overflow: hidden !important;
 		}

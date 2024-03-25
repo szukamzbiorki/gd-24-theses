@@ -205,7 +205,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
-		height: 100vh;
+		height: var(--window-height);
 		width: 100vw;
 		padding: 0 var(--space-m);
 		overflow: hidden;
@@ -366,7 +366,7 @@
 
 			@media screen and (max-width: 640px) {
 				width: calc(100vw);
-				top: 48.5vh;
+				top: calc(var(--window-height) * 0.586);
 				left: 0;
 			}
 		}
@@ -378,7 +378,7 @@
 			@media screen and (max-width: 640px) {
 				display: block;
 				position: absolute;
-				bottom: 51.5vh;
+				bottom: calc(var(--window-height) * 0.415);
 				left: 0;
 				z-index: 1;
 				background-color: white;
