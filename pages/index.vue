@@ -96,6 +96,43 @@
 				{{ truncateString(data.data[globalSlide].abstract, 140) }}
 			</div>
 		</a>
+		<div v-if="showCredit" class="credits">
+			<div class="line">
+				<div class="label">Thesis Supervisors</div>
+				<div class="persons">
+					<span class="person">Dirk Vis</span>
+					<span class="person">Prof. Dr. Füsun Türetken</span>
+				</div>
+			</div>
+			<div class="line">
+				<div class="label">Visual Essay Supervisor</div>
+				<div class="persons">
+					<span class="person">Bart de Baets</span>
+				</div>
+			</div>
+			<div class="line">
+				<div class="label">Coding Supervisors</div>
+				<div class="persons">
+					<span class="person">Thomas Buxo</span>
+					<span class="person">François Girard-Meunier</span>
+				</div>
+			</div>
+			<div class="line">
+				<div class="label">Website design</div>
+				<div class="persons">
+					<span class="person">Aliona Ciobanu</span>
+					<span class="person">Bartek Pierściński</span>
+					<span class="person">Dans Jirgensons</span>
+					<span class="person">Stefaniia Bodnia</span>
+				</div>
+			</div>
+			<div class="line">
+				<div class="label">Website development</div>
+				<div class="persons">
+					<span class="person">Bartek Pierściński</span>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -198,8 +235,21 @@
 					user-select: none;
 				}
 
+				& > .right {
+					@media screen and (max-width: 640px) {
+						display: none;
+					}
+				}
+
 				& > .credits {
+					position: absolute;
+					top: 50vh;
+					left: 0;
+					z-index: 1;
 					user-select: none;
+					background-color: white;
+					opacity: 1;
+
 					& > .line {
 						display: grid;
 						grid-template-columns: 1fr 1fr;
@@ -246,7 +296,8 @@
 			padding-bottom: 3px;
 			background-color: white;
 			@media screen and (max-width: 640px) {
-				width: calc(100vw - 2 * var(--space-m));
+				width: calc(100vw);
+				padding: var(--space-s);
 				height: auto;
 			}
 		}
@@ -338,6 +389,27 @@
 				}
 				& > .abst {
 					padding: var(--space-s) var(--space-m);
+				}
+			}
+		}
+		& > .credits {
+			position: absolute;
+			top: 1.8rem;
+			left: 0;
+			z-index: 1;
+			user-select: none;
+			background-color: white;
+			opacity: 1;
+			width: 100vw;
+			padding-left: var(--space-s);
+
+			& > .line {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				& > .persons {
+					& > * {
+						display: block;
+					}
 				}
 			}
 		}
