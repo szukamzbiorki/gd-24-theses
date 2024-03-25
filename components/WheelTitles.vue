@@ -5,7 +5,7 @@
 			:key="index"
 			class="keen-slider__slide"
 		>
-			<NuxtMarquee>
+			<NuxtMarquee autoFill="true">
 				<span>{{ slide.title }}</span>
 			</NuxtMarquee>
 		</div>

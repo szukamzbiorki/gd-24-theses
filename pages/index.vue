@@ -300,7 +300,7 @@
 				}
 			}
 			position: absolute;
-			width: 50vw;
+			width: 50.5vw;
 			height: calc(50vh - 0.7rem);
 			text-overflow: ellipsis;
 			overflow: hidden;

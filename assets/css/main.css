@@ -63,3 +63,7 @@ body {
 	background: darkgrey;
 	color: white;
 }
+
+.vfm-parent {
+	margin-right: 30px;
+}
