@@ -220,6 +220,16 @@
 	function slideChangedImages(i) {
 		globalSlide.value = i
 	}
+
+	onMounted(() => {
+		setTimeout(() => {
+			const activeel = document.querySelector('.names>.active-slide')
+			const lineel = document.querySelector('a.line')
+			const { top } = useElementBounding(activeel)
+			console.log(activeel, lineel, top.value + 'px')
+			lineel.style.top = top.value - 2 + 'px'
+		}, 50)
+	})
 </script>
 
 <style lang="postcss" scoped>
