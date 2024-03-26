@@ -165,8 +165,8 @@
 	const { height: lineHeight, top: lineTop } = useElementBounding(line)
 
 	const mobileContPos = computed(() => lineTop.value - h.value + 'px')
-	const mobileContTop = computed(() => t.value - 30 + 'px')
-
+	// const mobileContTop = computed(() => t.value - 30 + 'px')
+	const lineTopComp = computed(() => lineTop.value + 'px')
 	const sortedNames = sortData(data.value.data, 'name')
 
 	const landing = ref(true)
@@ -254,7 +254,7 @@
 		}
 		& > .images {
 			@media screen and (max-width: 640px) {
-				height: v-bind(mobileContTop) !important;
+				height: v-bind(mobileContPos) !important;
 			}
 		}
 		& > .abstract {
@@ -359,6 +359,10 @@
 				opacity: 0;
 			}
 			& > .content {
+				position: absolute;
+				transform: translateY(2px);
+				top: v-bind(lineTopComp);
+				width: 100vw;
 				display: grid;
 				grid-template-columns: 16vw 1fr auto;
 				max-width: calc(50vw - var(--space-s));
@@ -391,6 +395,7 @@
 			flex-direction: row-reverse;
 			padding-top: 1.7px;
 			padding-right: 5px;
+			z-index: 5;
 
 			&.hide {
 				& > .enter {

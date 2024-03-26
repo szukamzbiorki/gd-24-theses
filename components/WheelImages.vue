@@ -163,9 +163,9 @@
 		@media screen and (max-width: 640px) {
 			min-width: 75vw !important;
 			width: 67vw;
-			min-height: 77% !important;
-			max-height: 77% !important;
-			height: 77%;
+			min-height: 90% !important;
+			max-height: 90% !important;
+			height: 90%;
 			/* min-height: calc(48vh - 90px) !important;
 			max-height: calc(48vh - 90px) !important;
 			height: calc(48vh - 90px); */
