@@ -83,7 +83,9 @@
 
 			<div class="landing" :class="{ hide: !landing }">
 				<div class="content">
-					<div class="left">KABK Graphic Design</div>
+					<div class="left">
+						{{ mobile ? 'KABK GD' : 'KABK Graphic Design' }}
+					</div>
 					<div class="center">Graduation theses</div>
 					<div class="right">2024</div>
 				</div>
