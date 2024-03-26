@@ -353,6 +353,7 @@
 			padding-bottom: calc(2px + var(--space-m));
 			background-color: white;
 			transition: opacity 1s ease-in-out;
+			z-index: 3;
 			color: black;
 			&.hide {
 				opacity: 0;
