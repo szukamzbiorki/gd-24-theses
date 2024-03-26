@@ -5,7 +5,10 @@
 			:key="index"
 			class="keen-slider__slide"
 		>
-			<NuxtMarquee v-if="index == findTitleIndex(globalSlide)" speed="38">
+			<NuxtMarquee
+				v-if="index == findTitleIndex(globalSlide) && slide.title.length > 50"
+				speed="38"
+			>
 				<span>{{ slide.title }}</span>
 			</NuxtMarquee>
 			<span v-else>{{ slide.title }}</span>
