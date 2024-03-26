@@ -149,7 +149,20 @@
 
 	onMounted(() => {
 		slider.value = new KeenSlider(container.value, options, [WheelControls])
+		const slides = document.querySelectorAll('.titles>.keen-slider__slide')
+		slides.forEach((slide, i) => {
+			slide.addEventListener('click', (event) => {
+				// targetElement = id
+				console.log(event)
+				slider.value.moveToIdx(i, false)
+			})
+		})
 	})
+
+	function onClickSlide(id) {
+		// targetElement = id
+		keen.moveToIdx(id, false)
+	}
 </script>
 
 <style lang="postcss" scoped>
