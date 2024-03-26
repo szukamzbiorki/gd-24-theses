@@ -91,6 +91,7 @@
 			<a
 				:href="`https://kabk.github.io/${data.data[globalSlide].link}`"
 				class="line"
+				ref="line"
 				:class="{ hide: !landing }"
 				><div class="enter">↗</div></a
 			>
@@ -157,9 +158,14 @@
 	const { height } = useWindowSize()
 	const { mobile } = useScreenSize()
 
+	const line = ref(null)
 	const mobilecreds = ref(null)
 
-	const { height: h } = useElementSize(mobilecreds)
+	const { height: h, top: t } = useElementBounding(mobilecreds)
+	const { height: lineHeight, top: lineTop } = useElementBounding(line)
+
+	const mobileContPos = computed(() => lineTop.value - h.value + 'px')
+	const mobileContTop = computed(() => t.value - 30 + 'px')
 
 	const sortedNames = sortData(data.value.data, 'name')
 
@@ -234,6 +240,11 @@
 			display: block;
 			@media screen and (max-width: 640px) {
 				display: none;
+			}
+		}
+		& > .images {
+			@media screen and (max-width: 640px) {
+				height: v-bind(mobileContTop) !important;
 			}
 		}
 		& > .abstract {
@@ -395,7 +406,7 @@
 			@media screen and (max-width: 640px) {
 				display: block;
 				position: absolute;
-				bottom: calc(var(--window-height) * 0.415);
+				top: v-bind(mobileContPos);
 				left: 0;
 				z-index: 1;
 				background-color: white;

@@ -139,16 +139,18 @@
 		overflow: visible !important;
 		height: 100vh !important;
 		max-height: 100vh !important;
-		/* flex-grow: 2; */
 		width: 52vw;
 		background-color: white;
 		@media screen and (max-width: 640px) {
 			position: absolute;
 			top: 2rem;
 			left: 0;
-			min-height: 38.7vh !important;
+			min-height: initial !important;
+			height: initial !important;
+			max-height: initial !important;
+			/* min-height: 38.7vh !important;
 			height: 38.7vh !important;
-			max-height: 38.7vh !important;
+			max-height: 38.7vh !important; */
 			width: 100vw !important;
 			overflow: hidden !important;
 		}
@@ -168,7 +170,6 @@
 		width: 90%;
 
 		color: grey;
-		/* background-color: grey; */
 		display: flex;
 		justify-content: center;
 		align-items: center;

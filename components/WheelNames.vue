@@ -149,8 +149,6 @@
 		max-height: 100vh !important;
 		width: 16vw !important;
 
-		/* flex-grow: 1; */
-
 		@media screen and (max-width: 640px) {
 			position: absolute;
 			bottom: 0vh;
